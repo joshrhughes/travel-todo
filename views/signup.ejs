@@ -1,0 +1,30 @@
+<% include ./partials/header.ejs %>
+<h2>Signup</h2>
+
+<% if (message.length > 0 ) { %>
+  <div class="alert alert-danger"><%= message %></div> 
+<% }  %>
+
+<form method="post" action="/signup">
+ <div class="form-group">
+    <label for="nameFirst">First Name</label>
+    <input class="form-control" type="text" name="nameFirst" id="nameFirst">
+  </div> 
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input class="form-control" type="text" name="email" id="email">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Password</label>
+    <input class="form-control" type="password" name="password" id="password">
+  </div>
+
+  <input class="btn btn-default" type="submit">
+</form>
+<hr>
+
+	<p>Already have an account? <a href="/login">Login</a></p>
+	<p>Or go <a href="/">home</a>.</p>
+<% include ./partials/footer.ejs %>

@@ -1,0 +1,47 @@
+{
+  "name": "travel-todo",
+  "version": "1.0.0",
+  "description": "An app that will keep track of where a user would like to travel",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt-nodejs": "latest",
+    "body-parser": "~1.0.0",
+    "chai": "^4.1.2",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.0.0",
+    "ejs": "~0.8.5",
+    "express": "~4.0.0",
+    "express-ejs-layouts": "^1.1.0",
+    "express-session": "~1.0.0",
+    "hbs": "^4.0.0",
+    "init": "^0.1.2",
+    "mapbox": "^1.0.0-beta9",
+    "mapbox-gl": "^0.43.0",
+    "method-override": "~1.0.0",
+    "mocha": "^4.1.0",
+    "mongodb": "^3.0.1",
+    "mongoose": "^4.7.2",
+    "morgan": "~1.0.0",
+    "nodemon": "^1.14.11",
+    "passport": "~0.1.17",
+    "passport-facebook": "~1.0.2",
+    "passport-google-oauth": "~0.1.5",
+    "passport-local": "~0.1.6",
+    "passport-twitter": "~1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshrhughes/travel-todo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshrhughes/travel-todo/issues"
+  },
+  "homepage": "https://github.com/joshrhughes/travel-todo#readme"
+}
