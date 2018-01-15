@@ -1,13 +1,13 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
-var Locations = require('./location.js');
+var Place = require('./place.js');
 
 var User = mongoose.Schema({
   local : {
     email        : String,
     password     : String,
     nameFirst    : String,
-    locations    : [Locations.schema]
+    places    : [Place.schema]
   }
 });
 
