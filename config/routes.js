@@ -31,14 +31,14 @@ router.route("/logout")
   .get(usersController.getLogout);
 
 router.route("/auth")
-  .get(authenticatedUser, usersController.auth);  //questionable
+  .get(authenticatedUser, usersController.auth); 
 
 router.route("/places")
-  .get(usersController.getPlaces)
+  .get(authenticatedUser, usersController.getPlaces)
   .post(usersController.postPlaces);
   
 router.route("/places/:id")
-  .get(usersController.getPlacesId)
+  .get(authenticatedUser, usersController.getPlacesId)
   .put(usersController.putPlacesId);   
 
 module.exports = router;

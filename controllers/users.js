@@ -54,7 +54,7 @@ function getPlaces(request, response){
 // POST /places
 function postPlaces(request, response){
   //console.log('body', request);
-  console.log(counter);
+  //console.log(counter);
   db.Place.create({
     userEmail: request.user.local.email,
     locName: request.body.place,
@@ -62,14 +62,15 @@ function postPlaces(request, response){
     number: counter
   },function(err, places){
     response.json(places);
-    return counter++;
+    return counter++; 
   });
-  
 }
 
 //GET /placesId
 function getPlacesId (request,response){
-
+  db.Place.find({ userEmail: request.user.local.email , number: request.params.id }, function (err, places) {
+    response.json(places);
+  });
 }
 
 //PUT /placesId
