@@ -41,10 +41,11 @@ function getLogout(request, response, next) {
 
 // POST /places
 function postPlaces(request, response){
-  console.log('body', request.body.place);
+  console.log('body', request);
   db.Place.create({
     userEmail: request.user.local.email,
     locName: request.body.place
+    
   });
   response.json(request.body.place);
 }

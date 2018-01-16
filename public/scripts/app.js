@@ -88,6 +88,6 @@ $(document).ready(function() {
         }).done(function(places){
         //renderPlace(places);
         });
-    });
+    });// end of form submit
 
 });//end of .ready()
