@@ -1,5 +1,6 @@
 var passport = require("passport");
 var db = require('../models');
+var counter = 10;
 
 // GET /signup
 function getSignup(request, response, next) {
@@ -43,8 +44,9 @@ function getLogout(request, response, next) {
 
 function getPlaces(request, response){
   //console.log('things', request);
-  console.log("Stuff is going here"+request.body)
-  db.Place.find({}, function(err,places){
+  //console.log("Stuff is going here"+request.body);
+  //only lists the current user's places
+  db.Place.find({userEmail: request.user.local.email }, function(err,places){ 
     response.json(places);
   });
 }
@@ -52,15 +54,28 @@ function getPlaces(request, response){
 // POST /places
 function postPlaces(request, response){
   //console.log('body', request);
+  console.log(counter);
   db.Place.create({
     userEmail: request.user.local.email,
     locName: request.body.place,
-    complete: request.body.beenThere
+    complete: request.body.beenThere,
+    number: counter
+  },function(err, places){
+    response.json(places);
+    return counter++;
   });
-  response.json(request.body);
+  
 }
 
+//GET /placesId
+function getPlacesId (request,response){
 
+}
+
+//PUT /placesId
+function putPlacesId (request, response){
+  //
+}
 
 // Restricted page
 function auth(request, response){
@@ -75,5 +90,7 @@ module.exports = {
   getLogout: getLogout,
   getPlaces: getPlaces,
   postPlaces: postPlaces,
+  getPlacesId: getPlacesId,
+  putPlacesId: putPlacesId,
   auth: auth
 };

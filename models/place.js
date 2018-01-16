@@ -8,7 +8,8 @@ var Place = mongoose.Schema({
         description: String,
         complete: Boolean, //if the todo is completed or not
         priority: Number, 
-        rating: Number
+        rating: Number,
+        number: Number
    // }
 });
 

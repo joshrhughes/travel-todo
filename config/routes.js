@@ -35,6 +35,10 @@ router.route("/auth")
 
 router.route("/places")
   .get(usersController.getPlaces)
-  .post(usersController.postPlaces);  
+  .post(usersController.postPlaces);
+  
+router.route("/places/:id")
+  .get(usersController.getPlacesId)
+  .put(usersController.putPlacesId);   
 
 module.exports = router;

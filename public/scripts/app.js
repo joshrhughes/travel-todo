@@ -96,15 +96,16 @@ $(document).ready(function() {
         data: formData,
         // dataType: String
         }).done(function(stuff){
-            //console.log(stuff);
-            renderPlace();
+            console.log(stuff);
+            renderPlace(stuff);
+            //returns "place" and no idea why
             
         });
     });// end of form submit
 
     //Rendering Places to Auth Page
     function renderPlace(places){
-       // console.log("rendering places:", places);
+       console.log("rendering places:", places);
 
         var placeHtml = 
             "        <!-- Place -->" +
