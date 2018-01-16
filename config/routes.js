@@ -30,7 +30,11 @@ router.route('/login')
 router.route("/logout")
   .get(usersController.getLogout);
 
-router.route("/secret")
-  .get(authenticatedUser, usersController.secret);  
+router.route("/auth")
+  .get(authenticatedUser, usersController.auth);  //questionable
+
+router.route("/places")
+  .get()
+  .post(usersController.postPlaces);  
 
 module.exports = router;

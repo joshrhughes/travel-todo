@@ -19,11 +19,10 @@ module.exports = function(passport){
         passReqToCallback : true
     }, function (req, email, password, callback) {
         var nameFirst = req.body.nameFirst;
-        //where we are gonna customize the passport new account sign up functionallity. 
-        // for example, checking to see if the user already has an account with a given username
+        //checking to see if the user already has an account with a given username
         User.findOne({'local.email' : email}, function(err, user){
             if (err) return callback (err);
-
+                //If email is already in use
             if (user){
                 return callback(null, false, req.flash('signupMessage', "This email is already used."));
             } else{

@@ -1,4 +1,6 @@
 console.log("hello");
+$(document).ready(function() {
+    console.log("We Ready");
 // mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zaHJodWdoZXMiLCJhIjoiY2pjMTJ3aWJ1MDNrNDMzczRxeXlveWtlbCJ9.AJ6NBubcPSNerFsvC4HB2g';
 // var map = new mapboxgl.Map({
 //     container: 'map',
@@ -61,3 +63,31 @@ console.log("hello");
         map.addControl(new MapboxGeocoder({
                 accessToken: mapboxgl.accessToken
             }));
+
+
+
+
+    ////Collecting Place form data and pushing it to db
+
+    
+    $('#placeForm').on('submit', function(event){
+        event.preventDefault();
+        console.log(this);
+        //console.log(request);
+        var formData = $(this).serialize();
+        console.log("form data is " + $(this).serialize());
+        console.log("the unserialzied data is " + this);
+        console.log('formData', formData);
+        $(this).trigger("reset");
+
+        $.ajax({
+        url: "/places",
+        type:"POST",
+        data: formData,
+        // dataType: String
+        }).done(function(places){
+        //renderPlace(places);
+        });
+    });
+
+});//end of .ready()

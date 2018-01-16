@@ -8,8 +8,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
-
-
 mongoose.connect('mongodb://localhost/tripster'); 
 
 app.use(morgan('dev')); 
@@ -33,8 +31,6 @@ app.use(function (req, res, next) {
     res.locals.currentUser = req.user;
     next();
 });
-
-
 
 var routes = require('./config/routes');
 app.use(routes);

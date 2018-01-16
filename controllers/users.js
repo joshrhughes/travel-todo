@@ -1,4 +1,5 @@
 var passport = require("passport");
+var db = require('../models');
 
 // GET /signup
 function getSignup(request, response, next) {
@@ -8,7 +9,7 @@ function getSignup(request, response, next) {
 // POST /signup
 function postSignup(request, response, next) {
   var signupStrategy = passport.authenticate('local-signup', {
-    successRedirect: '/secret',
+    successRedirect: '/auth',
     failureRedirect: '/signup',
     failureFlash: true
   });
@@ -24,7 +25,7 @@ function getLogin(request, response, next) {
 // POST /login 
 function postLogin(request, response, next) {
   var loginStrategy = passport.authenticate('local-login', {
-    successRedirect: '/secret',
+    successRedirect: '/auth',
     failureRedirect: '/login',
     failureFlash: true
   });
@@ -38,9 +39,21 @@ function getLogout(request, response, next) {
   response.redirect('/');
 }
 
+// POST /places
+function postPlaces(request, response){
+  console.log('body', request.body.place);
+  db.Place.create({
+    userEmail: request.user.local.email,
+    locName: request.body.place
+  });
+  response.json(request.body.place);
+}
+
+
+
 // Restricted page
-function secret(request, response){
-  response.render('secret');
+function auth(request, response){
+  response.render('auth');
 }
 
 module.exports = {
@@ -49,5 +62,6 @@ module.exports = {
   getSignup: getSignup,
   postSignup: postSignup,
   getLogout: getLogout,
-  secret: secret
+  postPlaces: postPlaces,
+  auth: auth
 };

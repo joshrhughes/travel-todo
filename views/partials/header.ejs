@@ -7,16 +7,15 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css' rel='stylesheet' />
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.css' type='text/css' />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.min.js'></script>
 
 
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.min.js'></script>
-    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.css'
-        type='text/css' />
-     
-
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.css' type='text/css' />
     <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    
    
   </head>
   <body>
@@ -46,8 +45,9 @@
         </ul>  
         <ul class ="nav navbar-nav navbar-right">
            <% if (currentUser) {%>
-            <li><a href="/secret">Secret</a></li>
-            <li><a href="/logout">Logout <%= currentUser.local.nameFirst %></a></li>
+            <li><a href="/auth"><%= currentUser.local.nameFirst %></a></li>
+           
+            <li><a href="/logout">Logout</a></li>
           <% } else { %>
             <li><a href="/login">Login</a></li>
             <li><a href="/signup">Signup</a></li> 
@@ -60,4 +60,5 @@
     </nav>
 
     <main class="container">
+  
   

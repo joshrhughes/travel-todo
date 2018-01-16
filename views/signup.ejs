@@ -8,17 +8,17 @@
 <form method="post" action="/signup">
  <div class="form-group">
     <label for="nameFirst">First Name</label>
-    <input class="form-control" type="text" name="nameFirst" id="nameFirst">
+    <input class="form-control" type="text" name="nameFirst" id="nameFirst" required>
   </div> 
 
   <div class="form-group">
     <label for="email">Email</label>
-    <input class="form-control" type="text" name="email" id="email">
+    <input class="form-control" type="email" name="email" id="email" required>
   </div>
 
   <div class="form-group">
     <label for="email">Password</label>
-    <input class="form-control" type="password" name="password" id="password">
+    <input class="form-control" type="password" name="password" id="password" required>
   </div>
 
   <input class="btn btn-default" type="submit">

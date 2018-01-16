@@ -1,14 +1,15 @@
 var mongoose = require('mongoose');
 
 var Place = mongoose.Schema({
-    local: {
+    //local: {
+        userEmail: String,
         latLong: String,  // latitude and longitude
         locName: String, // location name
         description: String,
         complete: Boolean, //if the todo is completed or not
-        position: Number, 
+        priority: Number, 
         rating: Number
-    }
+   // }
 });
 
 
