@@ -34,7 +34,7 @@ router.route("/auth")
   .get(authenticatedUser, usersController.auth);  //questionable
 
 router.route("/places")
-  .get()
+  .get(usersController.getPlaces)
   .post(usersController.postPlaces);  
 
 module.exports = router;

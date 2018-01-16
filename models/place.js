@@ -13,5 +13,4 @@ var Place = mongoose.Schema({
 });
 
 
-
 module.exports = mongoose.model('Place', Place);

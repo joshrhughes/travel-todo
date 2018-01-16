@@ -39,15 +39,25 @@ function getLogout(request, response, next) {
   response.redirect('/');
 }
 
+// GET /places
+
+function getPlaces(request, response){
+  //console.log('things', request);
+  console.log("Stuff is going here"+request.body)
+  db.Place.find({}, function(err,places){
+    response.json(places);
+  });
+}
+
 // POST /places
 function postPlaces(request, response){
-  console.log('body', request);
+  //console.log('body', request);
   db.Place.create({
     userEmail: request.user.local.email,
-    locName: request.body.place
-    
+    locName: request.body.place,
+    complete: request.body.beenThere
   });
-  response.json(request.body.place);
+  response.json(request.body);
 }
 
 
@@ -63,6 +73,7 @@ module.exports = {
   getSignup: getSignup,
   postSignup: postSignup,
   getLogout: getLogout,
+  getPlaces: getPlaces,
   postPlaces: postPlaces,
   auth: auth
 };
