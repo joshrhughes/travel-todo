@@ -74,7 +74,12 @@ $(document).ready(function() {
         console.log('response returned');
         console.log(places);
         places.forEach(function (onePlace) {
-            renderPlace(onePlace);
+            console.log(onePlace.complete);
+            if(onePlace.complete != true){
+            renderTodo(onePlace);
+            } else {
+            renderComplete(onePlace);
+            }
         });
     });
 
@@ -91,12 +96,16 @@ $(document).ready(function() {
             data: formData,
             // dataType: String
         }).done(function(stuff){
-            renderPlace(stuff);
+            if (stuff.complete != true) {
+                renderTodo(stuff);
+            } else {
+                renderComplete(stuff);
+            }
         });
     });// end of form submit
 
     ////Rendering Places to Auth Page
-    function renderPlace(places){
+    function renderTodo(places){
        console.log("rendering places:", places);
 
         var placeHtml = 
@@ -107,9 +116,22 @@ $(document).ready(function() {
             "          </div>";
 
         // render to the page with jQuery
-        $('#userPlaces').append(placeHtml); 
+        $('#todoPlaces').append(placeHtml); 
     }// end of renderPlace
 
+    ////Rendering Places completed to Auth page
+    function renderComplete(places) {
+        console.log("rendering complete places:", places);
+
+        var placeHtml =
+
+            "          <div class='divPlace" + places._id + "'>" +
+            "             <div>" + places.locName + "</div>" +
+            "          </div>";
+
+        // render to the page with jQuery
+        $('#completePlaces').append(placeHtml);
+    }// end of renderPlace
  
     ////When beenThere checkbox has been clicked, updates field
     $("#userPlaces").on("click", ".btn", function () {

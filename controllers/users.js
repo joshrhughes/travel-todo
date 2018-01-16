@@ -1,16 +1,5 @@
 var passport = require("passport");
 var db = require('../models');
-// var counter = 10;
-// var dbNum;
-// db.Place.count({}, function (err, count) {
-//   console.log(count);
-//   a = count;
-//   return a;
-// });
-// var dbNum = a;
-// console.log(dbNum);
-
-
 
 
 // GET /signup
@@ -57,7 +46,7 @@ function getPlaces(request, response){
   //console.log('things', request);
   //console.log("Stuff is going here"+request.body);
   //only lists the current user's places
-  db.Place.find({userEmail: request.user.local.email }, function(err,places){ 
+  db.Place.find({userEmail: request.user.local.email}, function(err,places){ //complete: null
     response.json(places);
   });
 }
@@ -65,7 +54,6 @@ function getPlaces(request, response){
 // POST /places
 function postPlaces(request, response){
  // console.log('body', request);
-  //console.log(counter);
   db.Place.create({
     userEmail: request.user.local.email,
     locName: request.body.place,
@@ -73,7 +61,6 @@ function postPlaces(request, response){
     //number: 
   },function(err, places){
     response.json(places);
-    // return counter++; 
   });
 }
 
