@@ -109,8 +109,11 @@ $(document).ready(function() {
 
         var placeHtml = 
             "        <!-- Place -->" +
-            "          <div>" + places.locName+"</div>" +
-            "          <!-- end Place -->";
+            "          <div class='divPlace"+ places._id +"'>" +
+            "             <div>" + places.locName +"</div>" +
+            "             <button class='btn btn-default place" + places._id + "'>Been There?</button>" +
+            "          </div>"+
+            "        <!-- end Place -->";
 
         // render to the page with jQuery
         $('#userPlaces').append(placeHtml);

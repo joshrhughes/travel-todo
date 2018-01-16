@@ -1,6 +1,17 @@
 var passport = require("passport");
 var db = require('../models');
-var counter = 10;
+// var counter = 10;
+// var dbNum;
+// db.Place.count({}, function (err, count) {
+//   console.log(count);
+//   a = count;
+//   return a;
+// });
+// var dbNum = a;
+// console.log(dbNum);
+
+
+
 
 // GET /signup
 function getSignup(request, response, next) {
@@ -53,29 +64,34 @@ function getPlaces(request, response){
 
 // POST /places
 function postPlaces(request, response){
-  //console.log('body', request);
+ // console.log('body', request);
   //console.log(counter);
   db.Place.create({
     userEmail: request.user.local.email,
     locName: request.body.place,
     complete: request.body.beenThere,
-    number: counter
+    //number: 
   },function(err, places){
     response.json(places);
-    return counter++; 
+    // return counter++; 
   });
 }
 
 //GET /placesId
 function getPlacesId (request,response){
-  db.Place.find({ userEmail: request.user.local.email , number: request.params.id }, function (err, places) {
+  db.Place.find({ userEmail: request.user.local.email , _id: request.params.id }, function (err, places) {
     response.json(places);
   });
 }
 
 //PUT /placesId
 function putPlacesId (request, response){
-  //
+  db.Place.update({ userEmail: request.user.local.email, _id: request.params.id }, {
+    //locName: request.body.place,
+    complete: request.body.beenThere
+  } ,function(err, updated){
+    response.json(updated);
+  });
 }
 
 // Restricted page
