@@ -67,10 +67,9 @@ $(document).ready(function() {
 //             }));
 
 
+   
 
-
-    ////Collecting Place form data and pushing it to db
-
+    ////Collecting Place form data and pushing it to page
     $.get('/places', function (places) {
         console.log('response returned');
         console.log(places);
@@ -79,45 +78,41 @@ $(document).ready(function() {
         });
     });
 
-
+    //// Collects Form Entry and creates new Place
     $('#placeForm').on('submit', function(event){
         event.preventDefault();
-        console.log(this);
-        //console.log(request);
         var formData = $(this).serialize();
-        console.log("form data is " + $(this).serialize());
         console.log("the unserialzied data is " + this);
         console.log('formData', formData);
         $(this).trigger("reset");
-
         $.ajax({
-        url: "/places",
-        type:"POST",
-        data: formData,
-        // dataType: String
+            url: "/places",
+            type:"POST",
+            data: formData,
+            // dataType: String
         }).done(function(stuff){
-            console.log(stuff);
             renderPlace(stuff);
-            //returns "place" and no idea why
-            
         });
     });// end of form submit
 
-    //Rendering Places to Auth Page
+    ////Rendering Places to Auth Page
     function renderPlace(places){
        console.log("rendering places:", places);
 
         var placeHtml = 
-            "        <!-- Place -->" +
+           
             "          <div class='divPlace"+ places._id +"'>" +
             "             <div>" + places.locName +"</div>" +
-            "             <button class='btn btn-default place" + places._id + "'>Been There?</button>" +
-            "          </div>"+
-            "        <!-- end Place -->";
+            "             <button id='" + places._id + "' class='btn btn-default place'>Been There?</button>" +
+            "          </div>";
 
         // render to the page with jQuery
-        $('#userPlaces').append(placeHtml);
-    }
-    
+        $('#userPlaces').append(placeHtml); 
+    }// end of renderPlace
 
+ 
+    ////When beenThere checkbox has been clicked, updates field
+    $("#userPlaces").on("click", ".btn", function () {
+        console.log($(this).attr('id'));
+    });
 });//end of .ready()

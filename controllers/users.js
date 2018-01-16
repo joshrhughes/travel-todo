@@ -88,7 +88,8 @@ function getPlacesId (request,response){
 function putPlacesId (request, response){
   db.Place.update({ userEmail: request.user.local.email, _id: request.params.id }, {
     //locName: request.body.place,
-    complete: request.body.beenThere
+    complete: true
+    //complete: request.body.beenThere
   } ,function(err, updated){
     response.json(updated);
   });
