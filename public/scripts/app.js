@@ -129,7 +129,7 @@ $(document).ready(function() {
         }).done($.get("/places/" + idNum, function (places) {
             $(".divPlaceComplete" + idNum + "").remove();
             $(".divPlace" + idNum + "").remove();
-            
+        
         }));
      }); //end of delete
 });//end of .ready()
