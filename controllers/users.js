@@ -73,7 +73,7 @@ function getPlacesId (request,response){
 
 //PUT /placesId
 function putPlacesId (request, response){
-  db.Place.update({ userEmail: request.user.local.email, _id: request.params.id }, {
+  db.Place.update({  _id: request.params.id }, {
     //locName: request.body.place,
     complete: true
     //complete: request.body.beenThere

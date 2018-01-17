@@ -10,21 +10,21 @@ body {
 }
 
 #features {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0px;
-            width: 300px;
-            overflow: auto;
-            background: rgba(255, 255, 255, 0.8);
-        }
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0px;
+    width: 300px;
+    overflow: auto;
+    background: rgba(255, 255, 255, 0.8);
+}
 
 #map canvas {
-            cursor: crosshair;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100%;
+    cursor: crosshair;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 #info {

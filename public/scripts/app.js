@@ -118,7 +118,7 @@ $(document).ready(function() {
         // render to the page with jQuery
         $('#todoPlaces').append(placeHtml); 
     }// end of renderPlace
-
+    
     ////Rendering Places completed to Auth page
     function renderComplete(places) {
         console.log("rendering complete places:", places);
@@ -135,6 +135,27 @@ $(document).ready(function() {
  
     ////When beenThere checkbox has been clicked, updates field
     $("#userPlaces").on("click", ".btn", function () {
-        console.log($(this).attr('id'));
+        var idNum = $(this).attr('id');
+        $.ajax({
+            url: "/places/"+idNum,
+            type: "PUT",
+        }).done($.get("/places/"+idNum, function(places){
+            console.log(places[0].locName);
+            renderComplete(places[0]);
+        }));
     });
 });//end of .ready()
+
+
+// $.get('/places', function (places) {
+//     console.log('response returned');
+//     console.log(places);
+//     places.forEach(function (onePlace) {
+//         console.log(onePlace.complete);
+//         if (onePlace.complete != true) {
+//             renderTodo(onePlace);
+//         } else {
+//             renderComplete(onePlace);
+//         }
+//     });
+// });

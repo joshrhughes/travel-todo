@@ -1,5 +1,5 @@
 <% include ./partials/header.ejs %>
-<h2>This page can only be accessed by authenticated users</h2>	
+
 <!-- <div id='map' style='width: 800px; height: 800px;'></div> -->
 
 <div id='map1'></div>
@@ -7,7 +7,7 @@
 <!-- <script src="../scripts/app.js"></script> -->
 
 <div class="todoList">
-<h2>TodoList</h2>
+    <h2>TodoList</h2>
 
     <form id="placeForm" method="post"  action="/places" > <!--method="post"  action="/places"-->
         <div class="form-group">
@@ -22,22 +22,22 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-
-<h3 class="list"></h3>
     
 </div>
 
-<div id="userPlaces">
-    <div>
-        <h2>Todo</h2>
-        <div id="todoPlaces">
-    
+<div id="userPlaces" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Todo</h2>
+            <div id="todoPlaces" class="col-sm-6">
+        
+            </div>
         </div>
-    </div>
-    <div>   
-        <h2>Complete</h2> 
-        <div id="completePlaces">
-    
+        <div class="col-sm-6">   
+            <h2>Complete</h2> 
+            <div id="completePlaces"  class"col-sm-6">
+        
+            </div>
         </div>
     </div>
 </div>
