@@ -111,8 +111,11 @@ $(document).ready(function() {
         var placeHtml = 
            
             "          <div class='row divPlace"+ places._id +"'>" +
-            "             <div class='col-sm-6'>" + places.locName +"</div>" +
-            "             <button id='" + places._id + "' class='btn btn-xs btn-default placeTodo col-sm-6'>Complete?</button>" +
+            "           <div class='col-sm-6'>" + places.locName +"</div>" +
+            "            <div class='btn-group btn-group-md col-sm'>"+
+            "             <button id='" + places._id + "' class='btn btn-xs btn-default placeTodo '>✓</button>" +
+            "             <button id='" + places._id + "' class='btn btn-xs btn-default placeDelete '>X</button>" +
+            "            </div>"+
             "          </div>";
 
         // render to the page with jQuery
@@ -127,7 +130,7 @@ $(document).ready(function() {
            
             "          <div class='row divPlaceComplete" + places._id + "'>" +
             "             <div class='col-sm-6'>" + places.locName + "</div>" +
-            "             <button id='" + places._id + "' class='btn btn-xs btn-default placeComplete col-sm-2'>X</button>" +         
+            "             <button id='" + places._id + "' class='btn btn-xs btn-default placeDelete col-sm-2'>X</button>" +         
             "          </div>";
 
         // render to the page with jQuery
@@ -148,14 +151,15 @@ $(document).ready(function() {
     });//end of update todo to complete
 
     ////Deletes place
-    $("#userPlaces").on("click", ".placeComplete", function () {
+    $("#userPlaces").on("click", ".placeDelete", function () {
         var idNum = $(this).attr('id');
         $.ajax({
             url: "/places/" + idNum,
             type: "DELETE",
         }).done($.get("/places/" + idNum, function (places) {
-            
             $(".divPlaceComplete" + idNum + "").remove();
+            $(".divPlace" + idNum + "").remove();
+            
         }));
      }); //end of delete
 });//end of .ready()
