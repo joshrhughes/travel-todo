@@ -10,7 +10,12 @@ $(document).ready(function() {
             center: [-96, 37.8],
             zoom: 3
         });
-          // Add geolocate control to the map.
+        
+        map.addControl(new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken
+        }));
+            
+        // Add geolocate control to the map.
             map.addControl(new mapboxgl.GeolocateControl({
                 positionOptions: {
                     enableHighAccuracy: true
@@ -33,9 +38,9 @@ $(document).ready(function() {
         //     });
 
         // Adds search bar
-        map.addControl(new MapboxGeocoder({
-                accessToken: mapboxgl.accessToken
-            }));//End of Mapbox
+        // map.addControl(new MapboxGeocoder({
+        //         accessToken: mapboxgl.accessToken
+        //     }));//End of Mapbox
 
     ////Collecting Place form data and pushing it to page
     $.get('/places', function (places) {
