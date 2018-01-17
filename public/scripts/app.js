@@ -125,7 +125,7 @@ $(document).ready(function() {
 
         var placeHtml =
 
-            "          <div class='divPlace" + places._id + "'>" +
+            "          <div class='divPlaceComplete" + places._id + "'>" +
             "             <div>" + places.locName + "</div>" +
             "          </div>";
 
@@ -140,22 +140,9 @@ $(document).ready(function() {
             url: "/places/"+idNum,
             type: "PUT",
         }).done($.get("/places/"+idNum, function(places){
-            console.log(places[0].locName);
             renderComplete(places[0]);
+            console.log(this);
+             $(".divPlace"+idNum+"").remove();
         }));
     });
 });//end of .ready()
-
-
-// $.get('/places', function (places) {
-//     console.log('response returned');
-//     console.log(places);
-//     places.forEach(function (onePlace) {
-//         console.log(onePlace.complete);
-//         if (onePlace.complete != true) {
-//             renderTodo(onePlace);
-//         } else {
-//             renderComplete(onePlace);
-//         }
-//     });
-// });
