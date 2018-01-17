@@ -39,6 +39,7 @@ router.route("/places")
   
 router.route("/places/:id")
   .get(authenticatedUser, usersController.getPlacesId)
-  .put(usersController.putPlacesId);   
+  .put(usersController.putPlacesId)   
+  .delete(usersController.deletePlacesId);
 
 module.exports = router;

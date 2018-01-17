@@ -82,6 +82,13 @@ function putPlacesId (request, response){
   });
 }
 
+//DELETE /placesId
+function deletePlacesId (request, response){
+  db.Place.remove({ _id: request.params.id},function(err, del){
+    response.json(del);
+  });
+}
+
 // Restricted page
 function auth(request, response){
   response.render('auth');
@@ -97,5 +104,6 @@ module.exports = {
   postPlaces: postPlaces,
   getPlacesId: getPlacesId,
   putPlacesId: putPlacesId,
+  deletePlacesId: deletePlacesId,
   auth: auth
 };

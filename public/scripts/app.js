@@ -110,9 +110,9 @@ $(document).ready(function() {
 
         var placeHtml = 
            
-            "          <div class='divPlace"+ places._id +"'>" +
-            "             <div>" + places.locName +"</div>" +
-            "             <button id='" + places._id + "' class='btn btn-default place'>Been There?</button>" +
+            "          <div class='row divPlace"+ places._id +"'>" +
+            "             <div class='col-sm-6'>" + places.locName +"</div>" +
+            "             <button id='" + places._id + "' class='btn btn-xs btn-default placeTodo col-sm-6'>Complete?</button>" +
             "          </div>";
 
         // render to the page with jQuery
@@ -124,9 +124,10 @@ $(document).ready(function() {
         console.log("rendering complete places:", places);
 
         var placeHtml =
-
-            "          <div class='divPlaceComplete" + places._id + "'>" +
-            "             <div>" + places.locName + "</div>" +
+           
+            "          <div class='row divPlaceComplete" + places._id + "'>" +
+            "             <div class='col-sm-6'>" + places.locName + "</div>" +
+            "             <button id='" + places._id + "' class='btn btn-xs btn-default placeComplete col-sm-2'>X</button>" +         
             "          </div>";
 
         // render to the page with jQuery
@@ -134,7 +135,7 @@ $(document).ready(function() {
     }// end of renderPlace
  
     ////When beenThere checkbox has been clicked, updates field
-    $("#userPlaces").on("click", ".btn", function () {
+    $("#userPlaces").on("click", ".placeTodo", function () {
         var idNum = $(this).attr('id');
         $.ajax({
             url: "/places/"+idNum,
@@ -144,5 +145,17 @@ $(document).ready(function() {
             console.log(this);
              $(".divPlace"+idNum+"").remove();
         }));
-    });
+    });//end of update todo to complete
+
+    ////Deletes place
+    $("#userPlaces").on("click", ".placeComplete", function () {
+        var idNum = $(this).attr('id');
+        $.ajax({
+            url: "/places/" + idNum,
+            type: "DELETE",
+        }).done($.get("/places/" + idNum, function (places) {
+            
+            $(".divPlaceComplete" + idNum + "").remove();
+        }));
+     }); //end of delete
 });//end of .ready()
