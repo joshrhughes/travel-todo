@@ -30,7 +30,9 @@
     "passport-twitter": "~1.0.2",
     "request": "^2.83.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "ws": "3.3.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
