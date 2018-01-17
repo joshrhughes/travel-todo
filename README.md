@@ -15,8 +15,8 @@ An app that allows a user to log in, keep track of places they've been and where
 
 ## Wireframes
 
-Landing Page ![picture](splash.png)  
-Auth User Page ![picture](map.png)   
+Landing Page ![picture](./READMEfiles/splash.png)  
+Auth User Page ![picture](./READMEfiles/map.png)   
  
 
 ## Chalenges

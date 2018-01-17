@@ -2,17 +2,18 @@
 var request = require('request'),
     expect = require('chai').expect;
 
-    
-describe("Person", function () {
-    describe("Constructor", function () {
-        var matt = new Person("Matt");
-        it("should create a new object", function () {
-            expect(typeof (User)).to.equal("object");
-        });
 
-        it("should have a name", function () {
-            expect(User.name).to.not.be.empty;
+let url = 'https://travel-todo.herokuapp.com/';
+
+describe('Testing Server', function () {
+    it('should respond with status 200/ok', function (done) {
+        request(url, function (err, res, body) {
+            expect(res.statusCode).to.eq(200);
+            done();
         });
     });
 });
+
+
+
 //check out tdd-todo if need be
