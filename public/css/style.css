@@ -2,9 +2,46 @@
 body { 
     margin:0; 
     padding:0; 
+    background: #228ED6;
 }
 
+a{
+    color: #D6EAF7;
+}
 
+.btn-default {
+    color: #333;
+    background-color: #D6EAF7;
+    border-color: #ccc;
+}
+
+.navbar-default{
+    background: #0D344E;
+    color: #D6EAF7;
+}
+.navbar-brand{
+    color: #D6EAF7;
+}
+.navbar-default .navbar-brand {
+    color: #D6EAF7;
+}
+
+.navbar-default .navbar-nav>li>a{
+    color: #D6EAF7;
+}
+
+h1{
+   color: #0D344E
+}
+
+.test{
+   text-align: center;
+   vertical-align: middle;
+}
+
+.subheader{
+    text-align: center;
+}
 
 .clear {
     clear:both;
@@ -27,6 +64,7 @@ body {
     top: 0;
     bottom: 0;
     width: 100%;
+    margin: 0 auto;
 }
 
 #info {
@@ -39,7 +77,7 @@ body {
         border-radius: 3px;
         font-size: 12px;
         text-align: center;
-        color: #222;
+        /* color: #222; */
         background: rgb(255, 255, 255);
     }
 
