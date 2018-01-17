@@ -5,7 +5,7 @@
 
 An app that will keep track of where a user would like to travel
 
-[Check it out!](https://joshrhughes.github.io/Project-1/homepage.html)
+[Check it out!](https://travel-todo.herokuapp.com/)
 
 
 

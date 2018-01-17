@@ -1,29 +1,28 @@
 <% include ./partials/header.ejs %>
+<div id="userPlaces" class="container-fluid break">
+    <div class="row">
+        <div id='map' class="col-sm-6" style="height: 400px;"></div>
+        <!--<div id='map' style='width: 800px; height: 500px;'></div>-->
 
- <div id='map' style='width: 800px; height: 500px;'></div>
- 
-<!-- 
-<div id='map1'></div>
-<pre id='info'></pre>
-<script src="../scripts/app.js"></script> -->
+        <div class="todoList col-sm-6">
+            <h2>TodoList</h2>
 
-<div class="todoList">
-    <h2>TodoList</h2>
+            <form id="placeForm" method="post"  action="/places" > <!--method="post"  action="/places"-->
+                <div class="form-group">
+                    <label for="Place">Place</label>
+                    <input type="text" class="form-control" id="place" placeholder="Enter Place" name="place">
+                    <small id="" class="form-text text-muted">Try a place you've never seen.</small>
+                </div>
+            
+                <div class="form-check">
+                    <label class="form-check-label" for="exampleCheck1">Been There Already?</label>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="beenThere" value="TRUE">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
 
-    <form id="placeForm" method="post"  action="/places" > <!--method="post"  action="/places"-->
-        <div class="form-group">
-            <label for="Place">Place</label>
-            <input type="text" class="form-control" id="place" placeholder="Enter Place" name="place">
-            <small id="" class="form-text text-muted">Try a place you've never seen.</small>
         </div>
-    
-        <div class="form-check">
-            <label class="form-check-label" for="exampleCheck1">Been There Already?</label>
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="beenThere" value="TRUE">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    
+    </div>   
 </div>
 
 <div id="userPlaces" class="container-fluid">
