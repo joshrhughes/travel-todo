@@ -13,7 +13,3 @@ describe('Testing Server', function () {
         });
     });
 });
-
-
-
-//check out tdd-todo if need be

@@ -1,8 +1,14 @@
-
+/* Bootstrap forced me to overide their precedence by combining classes */
 body { 
     margin:0; 
     padding:0; 
     background: #228ED6;
+}
+
+#jumbotron{
+    background-image: url('https://www141.lunapic.com/do-not-link-here-use-hosting-instead/151623694167527373?9129763567');
+    background-size: cover;
+    height: 100%;}
 }
 
 a{
