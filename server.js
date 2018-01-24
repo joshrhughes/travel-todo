@@ -10,6 +10,7 @@ var session      = require('express-session');
 
 mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/tripster'); 
 
+
 app.use(morgan('dev')); 
 app.use(cookieParser());
 app.use(bodyParser()); 

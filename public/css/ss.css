@@ -3,8 +3,20 @@
       font: 20px Montserrat, sans-serif;
       line-height: 1.8;
       color: #f5f6f7;
+      height: 100%;
+      margin: 0;
   }
   p {font-size: 16px;}
+  a{
+      color: #474e5d;
+  }
+  a , footer {
+      color: #19689C;
+  }
+  hr{
+      border-color: #19689C;
+      border-width: 1px;
+  }
   .margin {margin-bottom: 45px;}
   .bg-1 { 
       background-color: #228ED6;
@@ -38,4 +50,22 @@
   .navbar-nav  li a:hover {
       color: #228ED6 !important;
   }
+ .wrapper{
+     min-height: 100%;
+     /* margin-bottom: 10px; */
+ }
+ .footer, .push{
+     height: 0px;
+ }
+ .formfield {
+     margin: 0 auto;
+     border: #f5f6f7 solid 2px;
+     padding: 10px;
+ }
+
+ @media screen and (min-width: 600px) {
+     .formfield{
+        max-width: 50%;
+     }
+ }
  
