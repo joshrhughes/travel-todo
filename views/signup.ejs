@@ -1,11 +1,12 @@
 <% include ./partials/head.ejs %>
 <div class="container-fluid bg-1">
   <div class="formfield bg-2">
-      <h2>Signup</h2>
+      <h2>Sign Up</h2>
       <hr>
       <% if (message.length > 0 ) { %>
     <div class="alert alert-danger"><%= message %></div> 
     <% }  %>
+    
 
     <form method="post" action="/signup">
     <div class="form-group">
