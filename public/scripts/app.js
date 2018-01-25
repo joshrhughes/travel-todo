@@ -6,7 +6,7 @@ $(document).ready(function() {
  mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zaHJodWdoZXMiLCJhIjoiY2pjMTJ3aWJ1MDNrNDMzczRxeXlveWtlbCJ9.AJ6NBubcPSNerFsvC4HB2g';
         var map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/joshrhughes/cjcdhc3ds3kcc2sqm67x5dw2q',
+            style: 'mapbox://styles/mapbox/light-v9',
             center: [-96, 37.8],
             zoom: 1
         });
