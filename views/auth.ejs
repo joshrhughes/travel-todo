@@ -2,21 +2,22 @@
 <div class="container-fluid bg-1">
 <div id="userPlaces1" class="container-fluid break">
     <div class="row">
-        <div id='map' class="col-sm-6" style="height: 400px;"></div>
+        <div id='map' class="col-sm-6 mapTodo bg-2" style="height: 400px;"></div>
+        
         <!--<div id='map' style='width: 800px; height: 500px;'></div>-->
-
-        <div class="todoList col-sm-6">
-            <h2>TodoList</h2>
+    </div>
+    <div class="row">
+        <div class="todoList col-sm-6 mapTodo bg-2">
+            <hr>
+            <h2>Todo List</h2>
 
             <form id="placeForm" method="post"  action="/places" > <!--method="post"  action="/places"-->
                 <div class="form-group">
-                    <label for="Place">Place</label>
-                    <input type="text" class="form-control" id="place" placeholder="Enter Place" name="place">
-                    <small id="" class="form-text text-muted">Try a place you've never seen.</small>
+                    <input type="text" class="form-control" id="place" placeholder="Try a place you've never seen" name="place">
                 </div>
             
                 <div class="form-check">
-                    <label class="form-check-label" for="exampleCheck1">Been There Already?</label>
+                    <small class="form-check-label" for="exampleCheck1">Already been there?</small>
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" name="beenThere" value="TRUE">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -28,13 +29,13 @@
 
 <div id="userPlaces" class="container-fluid">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 subs bg-2">
             <h2 class="subheader">Todo</h2>
             <div id="todoPlaces"> 
         
             </div>
         </div>
-        <div class="col-sm-6">   
+        <div class="col-sm-6 subs bg-2">   
             <h2 class="subheader">Complete</h2> 
             <div id="completePlaces">
         

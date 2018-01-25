@@ -8,7 +8,7 @@ $(document).ready(function() {
             container: 'map',
             style: 'mapbox://styles/joshrhughes/cjcdhc3ds3kcc2sqm67x5dw2q',
             center: [-96, 37.8],
-            zoom: 3
+            zoom: 1
         });
         
         map.addControl(new MapboxGeocoder({
@@ -37,11 +37,7 @@ $(document).ready(function() {
         //             JSON.stringify(e.lngLat);
         //     });
 
-        // Adds search bar
-        // map.addControl(new MapboxGeocoder({
-        //         accessToken: mapboxgl.accessToken
-        //     }));//End of Mapbox
-
+    
     ////Collecting Place form data and pushing it to page
     $.get('/places', function (places) {
         console.log('response returned');
@@ -102,8 +98,8 @@ $(document).ready(function() {
         var placeHtml =
            
             "          <div class='text-center row divPlaceComplete" + places._id + "'>" +
-            "             <div class='align-middle col-sm-6'><h4>" + places.locName + "</h4></div>" +
-            "              <div class='align-middle btn-group btn-group-md col-sm-6'>" +
+            "             <div class='align-right col-sm-6'><h4>" + places.locName + "</h4></div>" +
+            "              <div class='align-right btn-group btn-group-md col-sm-6'>" +
             "              <button id='" + places._id + "' class='btn btn-sm btn-default placeDelete'>X</button>" +   
             "            </div>" +      
             "          </div>";
