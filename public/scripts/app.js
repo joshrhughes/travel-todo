@@ -6,7 +6,8 @@ $(document).ready(function() {
  mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zaHJodWdoZXMiLCJhIjoiY2pjMTJ3aWJ1MDNrNDMzczRxeXlveWtlbCJ9.AJ6NBubcPSNerFsvC4HB2g';
         var map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/light-v9',
+            style: 'mapbox://styles/joshrhughes/cjcw3yogd12ts2rqyup4zmowf',
+            // style: 'mapbox://styles/mapbox/light-v9',
             center: [-96, 37.8],
             zoom: 1
         });
@@ -98,9 +99,9 @@ $(document).ready(function() {
         var placeHtml =
            
             "          <div class='text-center row divPlaceComplete" + places._id + "'>" +
-            "             <div class='align-right col-sm-6'><h4>" + places.locName + "</h4></div>" +
+            "             <div class='align-right  col-sm-6'><h4>" + places.locName + "</h4></div>" +
             "              <div class='align-right btn-group btn-group-md col-sm-6'>" +
-            "              <button id='" + places._id + "' class='btn btn-sm btn-default placeDelete'>X</button>" +   
+            "              <button id='" + places._id + "' class=' btn btn-sm btn-default placeDelete'>X</button>" +   
             "            </div>" +      
             "          </div>";
 
